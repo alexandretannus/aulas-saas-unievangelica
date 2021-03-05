@@ -23,7 +23,7 @@ public class AuthorizationServer extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient("cliente").secret(passwordEncoder.encode("secret")).scopes("read")
-                .authorizedGrantTypes("password").accessTokenValiditySeconds(20);
+                .authorizedGrantTypes("password");
     }
 
     @Override
